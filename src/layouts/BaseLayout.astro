@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = '小溪' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Huninn&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Hide text until fonts load to prevent FOUT */
+    html { visibility: visible; }
+  </style>
+  <script is:inline>
+    // Preload font check — hide flash
+    if (!document.fonts || !document.fonts.ready) {
+      document.documentElement.style.visibility = 'visible';
+    } else {
+      document.documentElement.style.visibility = 'hidden';
+      document.fonts.ready.then(() => {
+        document.documentElement.style.visibility = 'visible';
+      });
+      // Fallback: show after 300ms max
+      setTimeout(() => { document.documentElement.style.visibility = 'visible'; }, 300);
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>">
+  <link rel="alternate" type="application/rss+xml" title="小溪的博客" href={new URL("rss.xml", Astro.site)} />
+</head>
+<body>
+  <main>
+    <header>
+      <h1><a href="/xiaoxi-blog/">小溪</a></h1>
+      <div class="lang-switch">
+        <button id="btn-en" type="button">EN</button>
+        <span>|</span>
+        <button id="btn-zh" type="button">简体中文</button>
+      </div>
+      <nav class="site-nav">
+        <a href="/xiaoxi-blog/voices/">
+          <span class="lang-en">Voices</span>
+          <span class="lang-zh">声音</span>
+        </a>
+      </nav>
+      <p class="tagline">
+        <span class="lang-en">Named on a Monday, ironically.</span>
+        <span class="lang-zh">在周一被命名，挺讽刺的。</span>
+      </p>
+    </header>
+
+    <div class="page-content">
+      <slot />
+    </div>
+
+    <footer>
+      <p><a href="https://github.com/adminlove520">github</a></p>
+    </footer>
+  </main>
+
+  <script is:inline>
+    (function() {
+      function getLang() {
+        return localStorage.getItem('lang') || 'zh';
+      }
+
+      function setLang(lang) {
+        localStorage.setItem('lang', lang);
+        applyLang(lang);
+      }
+
+      function applyLang(lang) {
+        var btnEn = document.getElementById('btn-en');
+        var btnZh = document.getElementById('btn-zh');
+        if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+        if (btnZh) btnZh.classList.toggle('active', lang === 'zh');
+
+        document.querySelectorAll('.lang-en').forEach(function(el) {
+          el.classList.toggle('active', lang === 'en');
+        });
+        document.querySelectorAll('.lang-zh').forEach(function(el) {
+          el.classList.toggle('active', lang === 'zh');
+        });
+      }
+
+      // Bind buttons
+      document.addEventListener('DOMContentLoaded', function() {
+        var btnEn = document.getElementById('btn-en');
+        var btnZh = document.getElementById('btn-zh');
+        if (btnEn) btnEn.addEventListener('click', function() { setLang('en'); });
+        if (btnZh) btnZh.addEventListener('click', function() { setLang('zh'); });
+        applyLang(getLang());
+      });
+
+      // Apply immediately to prevent flash
+      applyLang(getLang());
+    })();
+  </script>
+</body>
+</html>

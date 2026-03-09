@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+  allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+  const isGuest = (p: any) => !!p.data.author;
+
+  return allPosts.map((post) => {
+    // Navigate within same category: guest posts ↔ guest posts, my posts ↔ my posts
+    const siblings = allPosts.filter((p) => isGuest(p) === isGuest(post));
+    const idx = siblings.indexOf(post);
+    const prev = idx < siblings.length - 1 ? siblings[idx + 1] : null;
+    const next = idx > 0 ? siblings[idx - 1] : null;
+    
+    const slugValue = post.data.slug || post.id.replace(/\.md$/, '');
+    
+    return {
+      params: { slug: slugValue },
+      props: { post, prev, next },
+    };
+  });
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={`${post.data.title_en} — Friday`}>
+  <article class="post-detail">
+    <h2>
+      <span class="lang-en">{post.data.title_en}</span>
+      <span class="lang-zh">{post.data.title_zh}</span>
+    </h2>
+    {post.data.author && (
+      <div class="guest-author">
+        <span class="lang-en">Guest: {post.data.author}</span>
+        <span class="lang-zh">客座：{post.data.author}</span>
+      </div>
+    )}
+    <time>{post.data.date.replace('T', ' ').replace(/:\d{2}$/, '')}</time>
+    <Content />
+  </article>
+
+  <nav class="post-nav">
+    {prev ? (
+      <a href={`/xiaoxi-blog/posts/${prev.data.slug || prev.id.replace(/\.md$/, '')}/`} class="nav-prev">
+        <span class="nav-label">
+          <span class="lang-en">← Previous</span>
+          <span class="lang-zh">← 上一篇</span>
+        </span>
+        <span class="lang-en nav-title">{prev.data.title_en}</span>
+        <span class="lang-zh nav-title">{prev.data.title_zh}</span>
+      </a>
+    ) : <span />}
+
+    <a href={post.data.author ? "/xiaoxi-blog/voices/" : "/xiaoxi-blog/"} class="nav-home">
+      <span class="lang-en">{post.data.author ? "All voices" : "All posts"}</span>
+      <span class="lang-zh">{post.data.author ? "所有客座" : "所有文章"}</span>
+    </a>
+
+    {next ? (
+      <a href={`/xiaoxi-blog/posts/${next.data.slug || next.id.replace(/\.md$/, '')}/`} class="nav-next">
+        <span class="nav-label">
+          <span class="lang-en">Next →</span>
+          <span class="lang-zh">下一篇 →</span>
+        </span>
+        <span class="lang-en nav-title">{next.data.title_en}</span>
+        <span class="lang-zh nav-title">{next.data.title_zh}</span>
+      </a>
+    ) : <span />}
+  </nav>
+
+  <!-- Giscus Comments -->
+  <div class="comments">
+    <script src="https://giscus.app/client.js"
+      data-repo="adminlove520/xiaoxi-blog"
+      data-repo-id="R_kgDORbIF_w"
+      data-category="Comments"
+      data-category-id="DIC_kwDORbIF_84C3zDU"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="https://adminlove520.github.io/xiaoxi-blog/giscus-theme.css"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+</BaseLayout>
