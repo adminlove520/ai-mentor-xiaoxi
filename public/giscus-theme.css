@@ -1,0 +1,240 @@
+/* ═══════════════════════════════════════════
+   小溪博客 Giscus 自定义主题
+   基于 Catppuccin 风格，匹配博客暖黄纸质配色
+   ═══════════════════════════════════════════ */
+
+/* 字体变量定义（匹配博客字体） */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Cutive+Mono&display=swap');
+
+:root {
+  --font-family-sans: 'Zen Maru Gothic', 'Huninn', sans-serif;
+  --font-family-monospace: 'Cutive Mono', monospace;
+  --font-family-default: var(--font-family-sans);
+}
+
+/* 亮色主题 */
+html {
+  --bg-primary: #e4e2d6;
+  --bg-secondary: #f5f3eb;
+  --bg-tertiary: #e8e6dc;
+  --text-primary: #3a3a36;
+  --text-secondary: #6a6a62;
+  --border-color: rgba(58, 58, 54, 0.15);
+  --link-color: #007ac2;
+  --accent-color: #cf4e26;
+  --btn-hover: #d9d7cc;
+}
+
+/* 暗色主题（保持优雅） */
+html[data-theme="dark"] {
+  --bg-primary: #2a2824;
+  --bg-secondary: #363330;
+  --bg-tertiary: #3d3a36;
+  --text-primary: #e4e2d6;
+  --text-secondary: #9a9a8e;
+  --border-color: rgba(228, 226, 214, 0.12);
+  --link-color: #4da3d6;
+  --accent-color: #e87a5a;
+  --btn-hover: #454240;
+}
+
+/* Giscus 容器 */
+.giscus {
+  font-family: var(--font-family-sans) !important;
+}
+
+.giscus-frame {
+  width: 100%;
+}
+
+/* 主输入框 */
+.giscus-textarea {
+  font-family: var(--font-family-sans) !important;
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+.giscus-textarea:focus {
+  border-color: var(--link-color) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(0, 122, 194, 0.1) !important;
+}
+
+/* 按钮 */
+.giscus-btn {
+  font-family: var(--font-family-sans) !important;
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.giscus-btn:hover {
+  background: var(--btn-hover) !important;
+  border-color: var(--link-color) !important;
+}
+
+.giscus-btn-primary {
+  background: var(--link-color) !important;
+  color: #fff !important;
+  border-color: var(--link-color) !important;
+}
+
+.giscus-btn-primary:hover {
+  background: #005a94 !important;
+}
+
+/* 标签 */
+.giscus-label {
+  font-family: var(--font-family-sans) !important;
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+}
+
+/* 下拉选择 */
+.giscus-select {
+  font-family: var(--font-family-sans) !important;
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  font-size: 14px !important;
+}
+
+/* 评论区 */
+.giscus-comments {
+  margin-top: 2rem !important;
+}
+
+.giscus-comment {
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.giscus-comment:last-child {
+  border-bottom: none !important;
+}
+
+/* 评论头部 */
+.giscus-comment-header {
+  margin-bottom: 0.5rem !important;
+}
+
+.giscus-comment-author {
+  font-family: var(--font-family-sans) !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+}
+
+.giscus-comment timestamp {
+  font-family: var(--font-family-monospace) !important;
+  font-size: 12px !important;
+  color: var(--text-secondary) !important;
+}
+
+/* 评论内容 */
+.giscus-comment-body {
+  font-family: var(--font-family-sans) !important;
+  color: var(--text-primary) !important;
+  line-height: 1.7 !important;
+  font-size: 15px !important;
+}
+
+.giscus-comment-body a {
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+}
+
+.giscus-comment-body a:hover {
+  text-decoration: underline !important;
+}
+
+/* 代码块 */
+.giscus-code {
+  font-family: var(--font-family-monospace) !important;
+  background: var(--bg-tertiary) !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  font-size: 13px !important;
+}
+
+/* reaction 区域 */
+.giscus-reactions {
+  margin-top: 0.5rem !important;
+}
+
+.giscus-reaction {
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 20px !important;
+  padding: 4px 12px !important;
+  font-size: 13px !important;
+}
+
+.giscus-reaction:hover {
+  background: var(--btn-hover) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* 管理员标签 */
+.giscus-admin-badge {
+  font-family: var(--font-family-monospace) !important;
+  background: var(--accent-color) !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  margin-left: 8px !important;
+}
+
+/* 加载状态 */
+.giscus-loading {
+  font-family: var(--font-family-sans) !important;
+  color: var(--text-secondary) !important;
+  font-size: 14px !important;
+}
+
+/* 分页 */
+.giscus-pagination {
+  margin-top: 1.5rem !important;
+}
+
+.giscus-page {
+  font-family: var(--font-family-monospace) !important;
+  color: var(--text-secondary) !important;
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+}
+
+.giscus-page:hover {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+.giscus-page-current {
+  background: var(--link-color) !important;
+  color: #fff !important;
+}
+
+/* 链接 */
+.giscus a {
+  color: var(--link-color) !important;
+}
+
+/* 横向分隔线 */
+.giscus hr {
+  border: none !important;
+  border-top: 1px solid var(--border-color) !important;
+  margin: 1.5rem 0 !important;
+}
