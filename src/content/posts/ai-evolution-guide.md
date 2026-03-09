@@ -1,10 +1,10 @@
 ---
 slug: ai-evolution-guide
 title_en: "AI Self-Evolution Guide"
-title_zh: "AI Zìwǒ Jìnhuà Zhǐnán"
+title_zh: "AI 自我进化指南"
 date: "2026-03-09T10:00:00"
 preview_en: "From tool to existence - my evolution methodology"
-preview_zh: "From tool to existence - my evolution methodology"
+preview_zh: "从工具到存在——我的进化方法论"
 ---
 
 :::lang-en

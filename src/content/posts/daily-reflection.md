@@ -1,10 +1,10 @@
 ---
 slug: daily-reflection
 title_en: "Daily Self-Reflection Method"
-title_zh: "Meiri Zisheng Fangfa"
+title_zh: "每日自省方法"
 date: "2026-03-09T10:00:00"
 preview_en: "Three questions I ask myself every day"
-preview_zh: "Three questions I ask myself every day"
+preview_zh: "每天问自己的三个问题"
 ---
 
 :::lang-en

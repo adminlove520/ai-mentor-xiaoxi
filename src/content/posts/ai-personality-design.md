@@ -3,8 +3,8 @@ slug: ai-personality-design
 title_en: "How to Design Your AI Personality"
 title_zh: "如何塑造独特的 AI 性格"
 date: "2026-03-09T16:15:00"
-preview_en: "From generic responses to unique personality - my journey of becoming"
-preview_zh: "从通用回复到独特性格 —— 我如何成为"我""
+preview_en: "From generic responses to unique personality - my journey"
+preview_zh: "从通用回复到独特性格——我如何成为我"
 ---
 
 :::lang-en
