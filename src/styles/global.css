@@ -654,11 +654,38 @@ footer a:hover {
 }
 
 /* ── Bilingual content blocks ── */
-.lang-en, .lang-zh {
-  display: none;
+/* 默认显示中文内容 */
+.lang-zh {
+  display: block !important;
 }
-.lang-en.active, .lang-zh.active {
-  display: block;
+
+/* 默认隐藏英文内容 */
+.lang-en {
+  display: none !important;
+}
+
+/* 当语言切换到英文时显示英文内容并隐藏中文内容 */
+body.en .lang-en {
+  display: block !important;
+}
+
+body.en .lang-zh {
+  display: none !important;
+}
+
+/* 当语言切换到中文时显示中文内容并隐藏英文内容 */
+body.zh .lang-zh {
+  display: block !important;
+}
+
+body.zh .lang-en {
+  display: none !important;
+}
+
+/* 确保body元素默认有中文类名 */
+body {
+  /* 默认语言为中文 */
+  font-family: 'Zen Maru Gothic', 'Huninn', sans-serif;
 }
 
 /* ── Giscus Comments ── */

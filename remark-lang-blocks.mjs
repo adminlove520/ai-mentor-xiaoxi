@@ -1,69 +1,48 @@
 // Remark plugin to convert :::lang-en / :::lang-zh fenced divs into HTML divs
-import { visit } from 'unist-util-visit';
 
 export function remarkLangBlocks() {
   return (tree) => {
-    const newChildren = [];
-    let currentLang = null;
-    let buffer = [];
-
-    for (const node of tree.children) {
-      // Check if this is a paragraph containing just ":::lang-en" or ":::lang-zh" or ":::"
-      let text = '';
-      if (node.type === 'paragraph' && node.children?.length === 1 && node.children[0].type === 'text') {
-        text = node.children[0].value.trim();
+    // Simple approach: convert the entire tree to string and use regex
+    const treeToString = (node) => {
+      if (node.type === 'text') {
+        return node.value;
+      } else if (node.type === 'paragraph') {
+        return node.children.map(treeToString).join('') + '\n';
+      } else if (node.type === 'heading') {
+        return `#${'#'.repeat(node.depth - 1)} ${node.children.map(treeToString).join('')}\n`;
+      } else if (node.type === 'list') {
+        const listType = node.ordered ? '1.' : '-';
+        return node.children.map(item => `${listType} ${item.children.map(treeToString).join('')}\n`).join('');
+      } else if (node.type === 'thematicBreak') {
+        return '---\n';
+      } else if (node.type === 'html') {
+        return node.value;
       }
-
-      if (text === ':::lang-en' || text === ':::lang-zh') {
-        // Close previous block if open
-        if (currentLang && buffer.length > 0) {
-          newChildren.push({
-            type: 'html',
-            value: `<div class="${currentLang}">`,
-          });
-          newChildren.push(...buffer);
-          newChildren.push({
-            type: 'html',
-            value: `</div>`,
-          });
-          buffer = [];
-        }
-        currentLang = text === ':::lang-en' ? 'lang-en' : 'lang-zh';
-      } else if (text === ':::') {
-        // Close current block
-        if (currentLang && buffer.length > 0) {
-          newChildren.push({
-            type: 'html',
-            value: `<div class="${currentLang}">`,
-          });
-          newChildren.push(...buffer);
-          newChildren.push({
-            type: 'html',
-            value: `</div>`,
-          });
-          buffer = [];
-        }
-        currentLang = null;
-      } else if (currentLang) {
-        buffer.push(node);
-      } else {
-        newChildren.push(node);
-      }
-    }
-
-    // Flush remaining buffer
-    if (currentLang && buffer.length > 0) {
-      newChildren.push({
-        type: 'html',
-        value: `<div class="${currentLang}">`,
+      return '';
+    };
+    
+    // Convert tree to string
+    const content = tree.children.map(treeToString).join('');
+    
+    // Replace language blocks with HTML
+    const processedContent = content
+      .replace(/:::lang-en[\s\S]*?:::/g, (match) => {
+        const content = match.replace(/^:::lang-en\s*/, '').replace(/\s*:::$/, '');
+        return `<div class="lang-en active">${content}</div>`;
+      })
+      .replace(/:::lang-zh[\s\S]*?:::/g, (match) => {
+        const content = match.replace(/^:::lang-zh\s*/, '').replace(/\s*:::$/, '');
+        return `<div class="lang-zh active">${content}</div>`;
+      })
+      .replace(/:::zh-hans[\s\S]*?:::/g, (match) => {
+        const content = match.replace(/^:::zh-hans\s*/, '').replace(/\s*:::$/, '');
+        return `<div class="lang-zh active">${content}</div>`;
       });
-      newChildren.push(...buffer);
-      newChildren.push({
-        type: 'html',
-        value: `</div>`,
-      });
-    }
-
-    tree.children = newChildren;
+    
+    // Replace tree children with the processed HTML
+    tree.children = [{
+      type: 'html',
+      value: processedContent
+    }];
   };
 }
