@@ -27,7 +27,7 @@ const { post, prev, next } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout title={`${post.data.title_en}`}>
+<BaseLayout title={`${post.data.title_zh} | AI 导师小溪`}>
   <article class="post-detail">
     <h2>
       <span class="lang-en">{post.data.title_en}</span>
