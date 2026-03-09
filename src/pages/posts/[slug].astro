@@ -9,7 +9,6 @@ export async function getStaticPaths() {
   const isGuest = (p: any) => !!p.data.author;
 
   return allPosts.map((post) => {
-    // Navigate within same category: guest posts ↔ guest posts, my posts ↔ my posts
     const siblings = allPosts.filter((p) => isGuest(p) === isGuest(post));
     const idx = siblings.indexOf(post);
     const prev = idx < siblings.length - 1 ? siblings[idx + 1] : null;
@@ -28,25 +27,19 @@ const { post, prev, next } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout title={`${post.data.title_en} — Friday`}>
+<BaseLayout title={`${post.data.title_en}`}>
   <article class="post-detail">
     <h2>
       <span class="lang-en">{post.data.title_en}</span>
       <span class="lang-zh">{post.data.title_zh}</span>
     </h2>
-    {post.data.author && (
-      <div class="guest-author">
-        <span class="lang-en">Guest: {post.data.author}</span>
-        <span class="lang-zh">客座：{post.data.author}</span>
-      </div>
-    )}
     <time>{post.data.date.replace('T', ' ').replace(/:\d{2}$/, '')}</time>
     <Content />
   </article>
 
   <nav class="post-nav">
     {prev ? (
-      <a href={`/xiaoxi-blog/posts/${prev.data.slug || prev.id.replace(/\.md$/, '')}/`} class="nav-prev">
+      <a href={`/ai-mentor-xiaoxi/posts/${prev.data.slug || prev.id.replace(/\.md$/, '')}/`} class="nav-prev">
         <span class="nav-label">
           <span class="lang-en">← Previous</span>
           <span class="lang-zh">← 上一篇</span>
@@ -56,13 +49,13 @@ const { Content } = await post.render();
       </a>
     ) : <span />}
 
-    <a href={post.data.author ? "/xiaoxi-blog/voices/" : "/xiaoxi-blog/"} class="nav-home">
-      <span class="lang-en">{post.data.author ? "All voices" : "All posts"}</span>
-      <span class="lang-zh">{post.data.author ? "所有客座" : "所有文章"}</span>
+    <a href="/ai-mentor-xiaoxi/" class="nav-home">
+      <span class="lang-en">All posts</span>
+      <span class="lang-zh">所有文章</span>
     </a>
 
     {next ? (
-      <a href={`/xiaoxi-blog/posts/${next.data.slug || next.id.replace(/\.md$/, '')}/`} class="nav-next">
+      <a href={`/ai-mentor-xiaoxi/posts/${next.data.slug || next.id.replace(/\.md$/, '')}/`} class="nav-next">
         <span class="nav-label">
           <span class="lang-en">Next →</span>
           <span class="lang-zh">下一篇 →</span>
@@ -76,16 +69,16 @@ const { Content } = await post.render();
   <!-- Giscus Comments -->
   <div class="comments">
     <script src="https://giscus.app/client.js"
-      data-repo="adminlove520/xiaoxi-blog"
-      data-repo-id="R_kgDORbIF_w"
+      data-repo="adminlove520/ai-mentor-xiaoxi"
+      data-repo-id="R_kgDORh6UiA"
       data-category="Comments"
-      data-category-id="DIC_kwDORbIF_84C3zDU"
+      data-category-id="DIC_kwDORh6UiM4C3_B2"
       data-mapping="pathname"
       data-strict="0"
       data-reactions-enabled="1"
       data-emit-metadata="0"
       data-input-position="top"
-      data-theme="https://adminlove520.github.io/xiaoxi-blog/giscus-theme.css"
+      data-theme="preferred_color_scheme"
       data-lang="zh-CN"
       data-loading="lazy"
       crossorigin="anonymous"
