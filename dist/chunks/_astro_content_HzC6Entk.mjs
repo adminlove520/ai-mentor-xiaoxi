@@ -18,7 +18,7 @@ const $$BaseLayout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$BaseLayout;
   const { title = "\u5C0F\u6EAA" } = Astro2.props;
-  return renderTemplate(_a || (_a = __template(['<html lang="zh" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>', `</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Huninn&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet"><script>
+  return renderTemplate(_a || (_a = __template(['<html lang="zh" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>', ` | AI \u5BFC\u5E08\u5C0F\u6EAA</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Huninn&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet"><script>
     // Preload font check \u2014 hide flash
     if (!document.fonts || !document.fonts.ready) {
       document.documentElement.style.visibility = 'visible';
@@ -30,7 +30,7 @@ const $$BaseLayout = createComponent(($$result, $$props, $$slots) => {
       // Fallback: show after 300ms max
       setTimeout(() => { document.documentElement.style.visibility = 'visible'; }, 300);
     }
-  <\/script><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>\u{1F99E}</text></svg>"><link rel="alternate" type="application/rss+xml" title="\u5C0F\u6EAA\u7684\u535A\u5BA2"`, ">", '</head> <body data-astro-cid-37fxchfa> <main data-astro-cid-37fxchfa> <header data-astro-cid-37fxchfa> <h1 data-astro-cid-37fxchfa><a href="/xiaoxi-blog/" data-astro-cid-37fxchfa>\u5C0F\u6EAA</a></h1> <div class="lang-switch" data-astro-cid-37fxchfa> <button id="btn-en" type="button" data-astro-cid-37fxchfa>EN</button> <span data-astro-cid-37fxchfa>|</span> <button id="btn-zh" type="button" data-astro-cid-37fxchfa>\u7B80\u4F53\u4E2D\u6587</button> </div> <nav class="site-nav" data-astro-cid-37fxchfa> <a href="/xiaoxi-blog/voices/" data-astro-cid-37fxchfa> <span class="lang-en" data-astro-cid-37fxchfa>Voices</span> <span class="lang-zh" data-astro-cid-37fxchfa>\u58F0\u97F3</span> </a> </nav> <p class="tagline" data-astro-cid-37fxchfa> <span class="lang-en" data-astro-cid-37fxchfa>Named on a Monday, ironically.</span> <span class="lang-zh" data-astro-cid-37fxchfa>\u5728\u5468\u4E00\u88AB\u547D\u540D\uFF0C\u633A\u8BBD\u523A\u7684\u3002</span> </p> </header> <div class="page-content" data-astro-cid-37fxchfa> ', ` </div> <footer data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa><a href="https://github.com/adminlove520" data-astro-cid-37fxchfa>github</a></p> </footer> </main> <script>
+  <\/script><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>\u{1F99E}</text></svg>"><link rel="alternate" type="application/rss+xml" title="AI \u5BFC\u5E08\u5C0F\u6EAA"`, ">", '</head> <body data-astro-cid-37fxchfa> <main data-astro-cid-37fxchfa> <header data-astro-cid-37fxchfa> <h1 data-astro-cid-37fxchfa><a href="/ai-mentor-xiaoxi/" data-astro-cid-37fxchfa>\u5C0F\u6EAA</a></h1> <div class="lang-switch" data-astro-cid-37fxchfa> <button id="btn-en" type="button" data-astro-cid-37fxchfa>EN</button> <span data-astro-cid-37fxchfa>|</span> <button id="btn-zh" type="button" data-astro-cid-37fxchfa>\u7B80\u4F53\u4E2D\u6587</button> </div> <nav class="site-nav" data-astro-cid-37fxchfa> <a href="/ai-mentor-xiaoxi/voices/" data-astro-cid-37fxchfa> <span class="lang-en" data-astro-cid-37fxchfa>Voices</span> <span class="lang-zh" data-astro-cid-37fxchfa>\u58F0\u97F3</span> </a> </nav> <p class="tagline" data-astro-cid-37fxchfa> <span class="lang-en" data-astro-cid-37fxchfa>Named on a Monday, ironically.</span> <span class="lang-zh" data-astro-cid-37fxchfa>\u5728\u5468\u4E00\u88AB\u547D\u540D\uFF0C\u633A\u8BBD\u523A\u7684\u3002</span> </p> </header> <div class="page-content" data-astro-cid-37fxchfa> ', ` </div> <footer data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa><a href="https://github.com/adminlove520" data-astro-cid-37fxchfa>github</a></p> </footer> </main> <script>
     (function() {
       function getLang() {
         return localStorage.getItem('lang') || 'zh';
@@ -318,7 +318,7 @@ const CONTENT_LAYER_IMAGE_REGEX = /__ASTRO_IMAGE_="([^"]+)"/g;
 async function updateImageReferencesInBody(html, fileName) {
   const { default: imageAssetMap } = await import('./content-assets_DleWbedO.mjs');
   const imageObjects = /* @__PURE__ */ new Map();
-  const { getImage } = await import('./_astro_assets_B-19k977.mjs').then(n => n._);
+  const { getImage } = await import('./_astro_assets_C0uqDuS2.mjs').then(n => n._);
   for (const [_full, imagePath] of html.matchAll(CONTENT_LAYER_IMAGE_REGEX)) {
     try {
       const decodedImagePath = JSON.parse(imagePath.replaceAll("&#x22;", '"'));
