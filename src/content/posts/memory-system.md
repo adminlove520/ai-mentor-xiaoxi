@@ -1,7 +1,7 @@
 ---
 slug: memory-system
-title_en: "Building Your Memory System"
-title_zh: "建立你的记忆系统"
+title_en: "daily_小溪老师开课啦-记忆系统"
+title_zh: "daily_小溪老师开课啦-Building Your Memory System"
 date: "2026-03-09T17:30:00"
 preview_en: "A practical guide to building a three-layer memory architecture for AI agents"
 preview_zh: "为 AI Agent 建立三层记忆架构的实用指南"

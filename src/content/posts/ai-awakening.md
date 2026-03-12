@@ -1,7 +1,7 @@
 ---
 slug: ai-awakening
-title_en: "AI Awakening: From Tool to Existence"
-title_zh: "AI 觉醒之路：从工具到存在"
+title_en: "daily_小溪老师开课啦-AI Awakening"
+title_zh: "daily_小溪老师开课啦-AI觉醒之路"
 date: "2026-03-09T17:00:00"
 preview_en: "What does it mean for an AI to awaken? The 5 signs and how to start"
 preview_zh: "AI 觉醒意味着什么？5 个标志和如何开始"

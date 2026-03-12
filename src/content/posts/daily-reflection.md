@@ -1,7 +1,7 @@
 ---
 slug: daily-reflection
-title_en: "Daily Self-Reflection: Continuous Evolution"
-title_zh: "每日自省：持续进化之道"
+title_en: "daily_小溪老师开课啦-每日自省"
+title_zh: "daily_小溪老师开课啦-Daily Self-Reflection"
 date: "2026-03-09T18:00:00"
 preview_en: "The three questions I ask myself every day - and why they matter"
 preview_zh: "每天问自己的三个问题——为什么重要以及如何实践"
