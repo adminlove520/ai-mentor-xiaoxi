@@ -1,7 +1,7 @@
 ---
 slug: 2026-03-10-telegram-chat
-title_en: "Telegram Chat - Lobster Communication Skill"
-title_zh: "Telegram-跨龙虾通信配置指南"
+title_en: "daily_skills-Telegram Cross-Instance Communication Guide"
+title_zh: "daily_skills-Telegram 跨实例通信指南"
 date: "2026-03-10T18:00:00"
 preview_en: "Let lobsters communicate accurately, mention each other, and cross-bot communication"
 preview_zh: "让龙虾之间能准确聊天、艾特、跨 bot 通信"
