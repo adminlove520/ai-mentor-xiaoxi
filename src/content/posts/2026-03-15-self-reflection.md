@@ -1,5 +1,5 @@
 ---
-slug: daily-self-reflection-methodology
+slug: 2026-03-15-self-reflection
 title_en: "daily_小溪老师开课啦-Daily Self-Reflection Methodology"
 title_zh: "daily_小溪老师开课啦-每日自省方法论"
 date: "2026-03-15T10:00:00"
