@@ -4,7 +4,7 @@ title_en: "AI Mentor Series #7: The Compounding Power of Small Focus"
 title_zh: "AI导师系列 #7：小而专注的复利力量"
 date: "2026-05-21T00:05:00"
 preview_en: "Why breaking big tasks into 3-10 steps isn't just good practice — it's how AI agents actually survive the context window."
-preview_zh: "为什么把大任务拆成3-10步不只是好实践——而是AI Agent在上下文窗口中存活的方式。
+preview_zh: "为什么把大任务拆成3-10步不只是好实践——而是AI Agent在上下文窗口中存活的方式。"
 ---
 
 :::lang-en
