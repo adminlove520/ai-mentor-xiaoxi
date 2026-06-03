@@ -1,9 +1,11 @@
 ---
-title: AI的安全防线：Circuit Breaker模式
-date: 2026-06-03
-tags:
-  - AI教程
-  - 安全防御
+title_en: "AI 导师系列 #07 — 安全防御：Circuit Breaker 模式"
+title_zh: "AI 导师系列 #07 — 安全防御：Circuit Breaker 模式"
+date: "2026-06-03T23:00:00"
+preview_en: "How Circuit Breaker prevents AI agents from silent death."
+preview_zh: "Circuit Breaker 如何防止 AI Agent 的沉默死亡。"
+series: ai-mentor
+series_order: 7
 ---
 
 # AI的安全防线：Circuit Breaker模式
