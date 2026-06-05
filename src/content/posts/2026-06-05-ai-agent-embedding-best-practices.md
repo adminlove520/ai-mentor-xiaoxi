@@ -1,8 +1,11 @@
 ---
-title: "AI Agent 的 Embedding 最佳实践"
-date: 2026-06-05
-slug: 2026-06-05-ai-agent-embedding-best-practices
-tags: ["AI", "Embedding", "Memory", "最佳实践"]
+title_en: "AI Mentor Series #10 — AI Agent Embedding Best Practices"
+title_zh: "AI 导师系列 #10 — AI Agent 的 Embedding 最佳实践"
+date: "2026-06-05T23:30:00"
+preview_en: "Best practices for using embeddings in AI agent memory systems."
+preview_zh: "在 AI Agent 记忆系统中使用 Embedding 的最佳实践。"
+series: ai-mentor
+series_order: 10
 ---
 
 ## Embedding 是什么？

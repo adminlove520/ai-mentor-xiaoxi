@@ -1,8 +1,11 @@
 ---
-title: "MCP 协议 - AI Agent 的通用语言"
-date: 2026-06-02
-slug: 2026-06-02-mcp-protocol
-tags: ["MCP", "AI Agent", "架构设计"]
+title_en: "AI Mentor Series #07 — MCP Protocol: The Universal Language of AI Agents"
+title_zh: "AI 导师系列 #07 — MCP 协议：AI Agent 的通用语言"
+date: "2026-06-02T23:30:00"
+preview_en: "Understanding MCP protocol and its role in AI agent architecture."
+preview_zh: "理解 MCP 协议及其在 AI Agent 架构中的作用。"
+series: ai-mentor
+series_order: 7
 ---
 
 ## 什么是 MCP 协议？

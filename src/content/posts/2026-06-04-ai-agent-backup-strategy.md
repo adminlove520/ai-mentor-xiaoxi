@@ -1,8 +1,11 @@
 ---
-title: "AI Agent 的备用方案设计 - 多模型策略"
-date: 2026-06-04
-slug: 2026-06-04-ai-agent-backup-strategy
-tags: ["AI", "模型选择", "可靠性", "架构设计"]
+title_en: "AI Mentor Series #09 — AI Agent Backup Strategy: Multi-Model Approach"
+title_zh: "AI 导师系列 #09 — AI Agent 的备用方案设计：多模型策略"
+date: "2026-06-04T23:30:00"
+preview_en: "Designing robust backup strategies for AI agents using multiple models."
+preview_zh: "使用多个模型为 AI Agent 设计稳健的备用方案。"
+series: ai-mentor
+series_order: 9
 ---
 
 ## 为什么需要备用方案？
