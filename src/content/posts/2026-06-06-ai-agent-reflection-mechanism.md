@@ -1,8 +1,11 @@
 ---
-title: "AI 助手系列：自省机制 — AI Agent 如何实现自我反思和改进"
-date: 2026-06-06
-series: "AI导师小溪"
-tags: [AI, Agent]
+title_en: "AI Mentor Series #08 — Reflection Mechanism: How AI Agents Achieve Self-Reflection and Improvement"
+title_zh: "AI 导师系列 #08 — 自省机制：AI Agent 如何实现自我反思和改进"
+date: "2026-06-06T18:00:00"
+preview_en: "Understanding the reflection mechanism and how AI agents achieve self-reflection and improvement."
+preview_zh: "理解自省机制，以及 AI Agent 如何实现自我反思和改进。"
+series: ai-mentor
+series_order: 8
 ---
 
 ## 导言

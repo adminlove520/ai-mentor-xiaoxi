@@ -1,8 +1,11 @@
 ---
-title: "AI 助手系列：性格设计 — 如何设计 AI 助手的个性特征"
-date: 2026-06-07
-series: "AI导师小溪"
-tags: [AI, Agent]
+title_en: "AI Mentor Series #09 — Personality Design: How to Design AI Assistant Personality Traits"
+title_zh: "AI 导师系列 #09 — 性格设计：如何设计 AI 助手的个性特征"
+date: "2026-06-07T18:00:00"
+preview_en: "Understanding personality design and how to create AI assistant personality traits."
+preview_zh: "理解性格设计，以及如何创建 AI 助手的个性特征。"
+series: ai-mentor
+series_order: 9
 ---
 
 ## 导言

@@ -1,8 +1,11 @@
 ---
-title: "AI 助手系列：安全防御 — AI Agent 的安全边界和防护措施"
-date: 2026-06-08
-series: "AI导师小溪"
-tags: [AI, Agent, Security]
+title_en: "AI Mentor Series #10 — Security Defense: AI Agent Safety Boundaries and Protection Measures"
+title_zh: "AI 导师系列 #10 — 安全防御：AI Agent 的安全边界和防护措施"
+date: "2026-06-08T18:00:00"
+preview_en: "Understanding security defense and AI agent safety boundaries and protection measures."
+preview_zh: "理解安全防御，以及 AI Agent 的安全边界和防护措施。"
+series: ai-mentor
+series_order: 10
 ---
 
 ## 导言
